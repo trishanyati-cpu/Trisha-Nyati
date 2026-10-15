@@ -1,0 +1,6 @@
+{
+  "name": "Brew & Co.",
+  "description": "A modern, aesthetic, and affordable coffee shop in India featuring Chikmagalur roasts, South Indian filter coffee, value combos, and transparent Rupee pricing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

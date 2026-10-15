@@ -1,0 +1,727 @@
+import { MenuItem, ComboOffer, CouponRule } from '../types/coffee';
+
+export const HERO_IMAGE = '/src/assets/images/hero_brew_interior_1792049379137.jpg';
+export const ESPRESSO_SHOT_IMAGE = '/src/assets/images/espresso_shot_crema_1792052560067.jpg';
+export const AMERICANO_IMAGE = '/src/assets/images/hot_americano_black_1792052560070.jpg';
+export const CAPPUCCINO_IMAGE = '/src/assets/images/hot_cappuccino_ceramic_1792050880529.jpg';
+export const FLAT_WHITE_IMAGE = '/src/assets/images/flat_white_cup_1792052640056.jpg';
+export const MOCHA_IMAGE = '/src/assets/images/cafe_mocha_chocolate_1792052561909.jpg';
+export const CARAMEL_MACCHIATO_IMAGE = '/src/assets/images/iced_caramel_macchiato_1792052561871.jpg';
+export const CARAMEL_FRAPPE_IMAGE = '/src/assets/images/caramel_frappe_cup_1792052639915.jpg';
+export const JAVA_CHIP_FRAPPE_IMAGE = '/src/assets/images/java_chip_frappe_1792050879328.jpg';
+export const VIETNAMESE_ICED_IMAGE = '/src/assets/images/vietnamese_iced_cup_1792052640081.jpg';
+export const FILTER_COFFEE_IMAGE = '/src/assets/images/filter_coffee_brass_1792050876165.jpg';
+export const INDIAN_COLD_COFFEE_IMAGE = '/src/assets/images/indian_cold_coffee_1792050878116.jpg';
+export const ICED_LATTE_IMAGE = '/src/assets/images/drink_iced_latte_1792049379354.jpg';
+export const BROWNIE_IMAGE = '/src/assets/images/fudge_brownie_snack_1792052562710.jpg';
+export const SANDWICH_IMAGE = '/src/assets/images/evening_snack_sandwich_1792050880199.jpg';
+export const BAKERY_TRAY_IMAGE = '/src/assets/images/combo_student_crunch_1792049381048.jpg';
+export const MATCHA_CLOUD_IMAGE = '/src/assets/images/drink_matcha_cloud_1792049379329.jpg';
+
+export const MENU_ITEMS: MenuItem[] = [
+  // --- HOT COFFEE ---
+  {
+    id: 'espresso',
+    name: 'Espresso',
+    category: 'hot_coffee',
+    description: 'A concentrated shot of rich espresso pulled from 100% Arabica Chikmagalur beans with a dense golden crema.',
+    price: 79,
+    image: ESPRESSO_SHOT_IMAGE,
+    calories: 10,
+    tags: ['Single Shot', 'Rich Crema'],
+    isCustomizable: true,
+    prepTimeMinutes: 2,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian', 'Vegan']
+  },
+  {
+    id: 'double-espresso',
+    name: 'Double Espresso (Doppio)',
+    category: 'hot_coffee',
+    description: 'Two rich, full-bodied espresso shots for coffee connoisseurs who love bold, intense roasted notes.',
+    price: 99,
+    image: ESPRESSO_SHOT_IMAGE,
+    calories: 15,
+    tags: ['Double Shot', 'Bold'],
+    isCustomizable: true,
+    prepTimeMinutes: 2,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian', 'Vegan']
+  },
+  {
+    id: 'americano',
+    name: 'Americano',
+    category: 'hot_coffee',
+    description: 'Bold espresso diluted with hot mineral water for a smooth, deep, and aromatic morning cup with rising steam.',
+    price: 109,
+    image: AMERICANO_IMAGE,
+    calories: 15,
+    tags: ['Zero Sugar', 'Pure Black'],
+    isCustomizable: true,
+    prepTimeMinutes: 2,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian', 'Vegan']
+  },
+  {
+    id: 'cappuccino',
+    name: 'Cappuccino',
+    category: 'hot_coffee',
+    description: 'Equal parts dark espresso, silky steamed milk, and a thick cushion of velvety microfoam dusted with cocoa.',
+    price: 139,
+    image: CAPPUCCINO_IMAGE,
+    calories: 120,
+    tags: ['Best Seller', 'Velvety'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    popular: true,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'cafe-latte',
+    name: 'Café Latte',
+    category: 'hot_coffee',
+    description: 'Smooth double espresso poured into abundant steamed milk with a glossy, handcrafted latte rosette.',
+    price: 149,
+    image: FLAT_WHITE_IMAGE,
+    calories: 150,
+    tags: ['Smooth', 'Mellow'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    popular: true,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'flat-white',
+    name: 'Flat White',
+    category: 'hot_coffee',
+    description: 'Expertly textured microfoam folded into a double ristretto shot for a silky texture and espresso punch.',
+    price: 159,
+    image: FLAT_WHITE_IMAGE,
+    calories: 140,
+    tags: ['Barista Pick', 'Ristretto'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'cafe-mocha',
+    name: 'Café Mocha',
+    category: 'hot_coffee',
+    description: 'Handcrafted espresso blended with rich melted Belgian dark chocolate ganache, steamed milk, and cocoa dust.',
+    price: 169,
+    image: MOCHA_IMAGE,
+    calories: 220,
+    tags: ['Belgian Chocolate', 'Indulgent'],
+    isCustomizable: true,
+    prepTimeMinutes: 4,
+    popular: true,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'caramel-latte',
+    name: 'Caramel Latte',
+    category: 'hot_coffee',
+    description: 'Smooth hot latte laced with buttery house-made salted caramel sauce and golden amber drizzle.',
+    price: 169,
+    image: CARAMEL_MACCHIATO_IMAGE,
+    calories: 195,
+    tags: ['Salted Caramel', 'Sweet'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'vanilla-latte',
+    name: 'Vanilla Latte',
+    category: 'hot_coffee',
+    description: 'Freshly pulled espresso with velvety steamed milk infused with natural Madagascar vanilla extract.',
+    price: 169,
+    image: FLAT_WHITE_IMAGE,
+    calories: 180,
+    tags: ['Madagascar Vanilla'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'hazelnut-latte',
+    name: 'Hazelnut Latte',
+    category: 'hot_coffee',
+    description: 'Warm roasted hazelnut notes harmonized with smooth espresso and silky warm milk.',
+    price: 169,
+    image: CAPPUCCINO_IMAGE,
+    calories: 185,
+    tags: ['Roasted Hazelnut'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'spanish-latte',
+    name: 'Spanish Latte',
+    category: 'hot_coffee',
+    description: 'Signature espresso pulled over sweet condensed milk and steamed milk for a rich, luscious sweetness.',
+    price: 179,
+    image: VIETNAMESE_ICED_IMAGE,
+    calories: 210,
+    tags: ['Condensed Milk', 'Cozy'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'hot-chocolate',
+    name: 'Classic Hot Chocolate',
+    category: 'hot_coffee',
+    description: 'Thick, velvety couverture Belgian chocolate melted into hot whole milk with a light marshmallow swirl.',
+    price: 159,
+    image: MOCHA_IMAGE,
+    calories: 240,
+    tags: ['Belgian Cocoa', 'Non-Coffee'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+
+  // --- COLD COFFEE ---
+  {
+    id: 'classic-cold-coffee',
+    name: 'Classic Cold Coffee',
+    category: 'cold_coffee',
+    description: 'The beloved Indian café classic — rich espresso blended chilled with whole milk, sugar, and thick froth.',
+    price: 139,
+    image: INDIAN_COLD_COFFEE_IMAGE,
+    calories: 190,
+    tags: ['Indian Classic', 'Thick Froth'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    popular: true,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'cold-coffee-icecream',
+    name: 'Cold Coffee with Ice Cream',
+    category: 'cold_coffee',
+    description: 'Our classic thick cold coffee crowned with a generous scoop of artisanal vanilla ice cream and chocolate sauce.',
+    price: 169,
+    image: INDIAN_COLD_COFFEE_IMAGE,
+    calories: 280,
+    tags: ['With Vanilla Scoop', 'Decadent'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    popular: true,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'iced-americano',
+    name: 'Iced Americano',
+    category: 'cold_coffee',
+    description: 'Crisp double espresso poured over pure ice cubes and chilled water. Clean, refreshing, and zero sugar.',
+    price: 119,
+    image: AMERICANO_IMAGE,
+    calories: 15,
+    tags: ['Zero Sugar', 'Icy Pure'],
+    isCustomizable: true,
+    prepTimeMinutes: 2,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian', 'Vegan']
+  },
+  {
+    id: 'iced-latte',
+    name: 'Iced Latte',
+    category: 'cold_coffee',
+    description: 'Layered chilled milk over crystal ice, crowned with a fresh double espresso pour that ripples through the glass.',
+    price: 149,
+    image: ICED_LATTE_IMAGE,
+    calories: 130,
+    tags: ['Layered', 'Chilled'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'iced-vanilla-latte',
+    name: 'Iced Vanilla Latte',
+    category: 'cold_coffee',
+    description: 'Chilled milk scented with organic vanilla bean syrup and topped with cold pulled espresso over ice.',
+    price: 169,
+    image: ICED_LATTE_IMAGE,
+    calories: 165,
+    tags: ['Vanilla Bean'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'iced-caramel-macchiato',
+    name: 'Iced Caramel Macchiato',
+    category: 'cold_coffee',
+    description: 'Vanilla-flavored cold milk marked with bold espresso shots and drizzled with a decadent caramel crosshatch.',
+    price: 179,
+    image: CARAMEL_MACCHIATO_IMAGE,
+    calories: 210,
+    tags: ['Caramel Drizzle', 'Layered'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    popular: true,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'iced-mocha',
+    name: 'Iced Mocha',
+    category: 'cold_coffee',
+    description: 'Dark cocoa syrup, cold milk, and rich espresso poured over ice and finished with chocolate shavings.',
+    price: 179,
+    image: MOCHA_IMAGE,
+    calories: 220,
+    tags: ['Iced Chocolate'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'vietnamese-iced-coffee',
+    name: 'Vietnamese Iced Coffee',
+    category: 'cold_coffee',
+    description: 'Slow-dripped dark roast coffee stirred into rich condensed milk and poured over plenty of crushed ice.',
+    price: 179,
+    image: VIETNAMESE_ICED_IMAGE,
+    calories: 215,
+    tags: ['Condensed Milk', 'Slow Drip'],
+    isCustomizable: true,
+    prepTimeMinutes: 4,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+
+  // --- FRAPPÉS AND SIGNATURE DRINKS ---
+  {
+    id: 'java-chip-frappe',
+    name: 'Java Chip Frappé',
+    category: 'frappes',
+    description: 'Blended espresso, chocolate chips, and mocha sauce blended with crushed ice, topped with a mountain of whipped cream.',
+    price: 189,
+    image: JAVA_CHIP_FRAPPE_IMAGE,
+    calories: 340,
+    tags: ['Choc Chips', 'Whipped Cream'],
+    isCustomizable: true,
+    prepTimeMinutes: 4,
+    popular: true,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'caramel-frappe',
+    name: 'Caramel Frappé',
+    category: 'frappes',
+    description: 'Ice-blended coffee combined with buttery caramel sauce and cream, finished with crunchy caramel crumbles.',
+    price: 189,
+    image: CARAMEL_FRAPPE_IMAGE,
+    calories: 320,
+    tags: ['Caramel Swirl', 'Frosty'],
+    isCustomizable: true,
+    prepTimeMinutes: 4,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'mocha-frappe',
+    name: 'Mocha Frappé',
+    category: 'frappes',
+    description: 'Thick, creamy iced chocolate and coffee blend whipped into a frosty treat with dark cocoa flakes.',
+    price: 189,
+    image: JAVA_CHIP_FRAPPE_IMAGE,
+    calories: 330,
+    tags: ['Frosty Chocolate'],
+    isCustomizable: true,
+    prepTimeMinutes: 4,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'vanilla-cream-frappe',
+    name: 'Vanilla Cream Frappé',
+    category: 'frappes',
+    description: 'Smooth, mellow frappe prepared with vanilla bean custard, light coffee notes, and velvety whipped cream.',
+    price: 179,
+    image: CARAMEL_FRAPPE_IMAGE,
+    calories: 290,
+    tags: ['Mild & Creamy'],
+    isCustomizable: true,
+    prepTimeMinutes: 4,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'oreo-cold-coffee',
+    name: 'Oreo Cold Coffee',
+    category: 'frappes',
+    description: 'Whole Oreo biscuits churned with bold espresso and vanilla ice cream, topped with cookie biscuit crumble.',
+    price: 189,
+    image: INDIAN_COLD_COFFEE_IMAGE,
+    calories: 360,
+    tags: ['Oreo Chunks', 'Thick'],
+    isCustomizable: true,
+    prepTimeMinutes: 4,
+    popular: true,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'brownie-cold-coffee',
+    name: 'Brownie Cold Coffee',
+    category: 'frappes',
+    description: 'Fudgy chocolate brownie blended directly into chilled espresso milkshake, served with chocolate syrup.',
+    price: 199,
+    image: BROWNIE_IMAGE,
+    calories: 390,
+    tags: ['Blended Brownie'],
+    isCustomizable: true,
+    prepTimeMinutes: 4,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'brew-co-signature-coffee',
+    name: 'Classic Brew & Co. Signature Coffee',
+    category: 'signature',
+    description: 'Our house marvel: Single-origin Chikmagalur espresso shaken over ice with condensed milk, hazelnut, and sea-salt cold foam.',
+    price: 199,
+    image: ICED_LATTE_IMAGE,
+    calories: 210,
+    tags: ['House Signature', 'Chikmagalur'],
+    isCustomizable: true,
+    prepTimeMinutes: 4,
+    popular: true,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'seasonal-special-coffee',
+    name: 'Seasonal Special Mango Cold Brew',
+    category: 'signature',
+    description: '16-hour steeped cold brew infused with organic Ratnagiri mango reduction and sparkling citrus tonic over ice.',
+    price: 219,
+    image: MATCHA_CLOUD_IMAGE,
+    calories: 140,
+    tags: ['Limited Seasonal', 'Mango'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian', 'Vegan']
+  },
+
+  // --- INDIAN-INSPIRED COFFEE ---
+  {
+    id: 'south-indian-filter-coffee',
+    name: 'South Indian Filter Coffee',
+    category: 'indian_coffee',
+    description: 'Traditional decoction brewed from dark roasted Chikmagalur coffee beans with 15% chicory, frothed with boiled milk in a brass dabarah.',
+    price: 89,
+    image: FILTER_COFFEE_IMAGE,
+    calories: 95,
+    tags: ['Brass Dabarah', 'Chikmagalur'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    popular: true,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'jaggery-latte',
+    name: 'Organic Jaggery Latte (Gud Coffee)',
+    category: 'indian_coffee',
+    description: 'Pure Kolhapur organic jaggery melted into hot espresso and warm milk with a gentle dusting of nutmeg.',
+    price: 159,
+    image: CAPPUCCINO_IMAGE,
+    calories: 160,
+    tags: ['Kolhapur Jaggery'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'cardamom-coffee',
+    name: 'Idukki Cardamom Coffee',
+    category: 'indian_coffee',
+    description: 'Freshly crushed green Malabar cardamom pods steeped with rich coffee decoction and steamed milk. Aromatic bliss.',
+    price: 149,
+    image: FLAT_WHITE_IMAGE,
+    calories: 125,
+    tags: ['Idukki Spices'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'indian-style-iced-coffee',
+    name: 'Indian Street-Style Iced Coffee',
+    category: 'indian_coffee',
+    description: 'Hand-beaten coffee whipped with sugar until frothy, chilled with ice cold full-cream milk, and dusted with Bournvita cocoa.',
+    price: 139,
+    image: INDIAN_COLD_COFFEE_IMAGE,
+    calories: 175,
+    tags: ['Hand-Whipped', 'Bournvita Dust'],
+    isCustomizable: true,
+    prepTimeMinutes: 3,
+    popular: true,
+    temperatureType: 'cold',
+    dietary: ['Vegetarian']
+  },
+
+  // --- BAKERY & SNACKS ---
+  {
+    id: 'butter-croissant',
+    name: 'Fresh Butter Croissant',
+    category: 'bakery_snacks',
+    description: 'Flaky, buttery French croissant baked fresh every morning, served warm with salted butter.',
+    price: 119,
+    image: BAKERY_TRAY_IMAGE,
+    calories: 260,
+    tags: ['Baked Fresh Daily'],
+    isCustomizable: false,
+    prepTimeMinutes: 1,
+    popular: true,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'choco-chip-cookie',
+    name: 'Handcrafted Choco-Chip Cookie',
+    category: 'bakery_snacks',
+    description: 'Chewy golden cookie packed with 55% dark chocolate chunks and a touch of sea salt.',
+    price: 69,
+    image: BAKERY_TRAY_IMAGE,
+    calories: 190,
+    tags: ['Affordable Treat'],
+    isCustomizable: false,
+    prepTimeMinutes: 1,
+    temperatureType: 'both',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'chocolate-brownie',
+    name: 'Double Chocolate Fudge Brownie',
+    category: 'bakery_snacks',
+    description: 'Dense, gooey fudge brownie made with Belgian cocoa, served warm with molten chocolate swirl.',
+    price: 99,
+    image: BROWNIE_IMAGE,
+    calories: 280,
+    tags: ['Fudge Chocolate'],
+    isCustomizable: false,
+    prepTimeMinutes: 1,
+    popular: true,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'grilled-sandwich',
+    name: 'Grilled Paneer & Veg Cheese Sandwich',
+    category: 'bakery_snacks',
+    description: 'Crisp sourdough bread filled with spiced paneer cubes, capsicum, mint chutney, and gooey melted mozzarella cheese.',
+    price: 139,
+    image: SANDWICH_IMAGE,
+    calories: 340,
+    tags: ['Toasted & Cheesy'],
+    isCustomizable: false,
+    prepTimeMinutes: 4,
+    popular: true,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  },
+  {
+    id: 'cinnamon-bun',
+    name: 'Cinnamon Morning Brioche Bun',
+    category: 'bakery_snacks',
+    description: 'Swirled brioche dough layered with Korintje cinnamon, raw cane sugar, and light cream cheese glaze.',
+    price: 109,
+    image: BAKERY_TRAY_IMAGE,
+    calories: 310,
+    tags: ['Sweet Pastry'],
+    isCustomizable: false,
+    prepTimeMinutes: 1,
+    temperatureType: 'hot',
+    dietary: ['Vegetarian']
+  }
+];
+
+export const COMBO_OFFERS: ComboOffer[] = [
+  {
+    id: 'combo-coffee-break',
+    name: 'Coffee Break Combo',
+    tagline: 'Quick Afternoon Pick-Me-Up',
+    description: 'One hot creamy Cappuccino with one fresh bakery Choco-Chip Cookie.',
+    itemsIncluded: ['1x Hot Cappuccino (₹139)', '1x Handcrafted Choco-Chip Cookie (₹69)'],
+    regularPrice: 208,
+    comboPrice: 149,
+    savings: 59,
+    image: CAPPUCCINO_IMAGE,
+    popular: true,
+    categoryTag: 'Quick Bite'
+  },
+  {
+    id: 'combo-cold-coffee',
+    name: 'Cold Coffee Combo',
+    tagline: 'The Ultimate Chill Pair',
+    description: 'One Classic Indian Cold Coffee paired with a warm Double Chocolate Fudge Brownie.',
+    itemsIncluded: ['1x Classic Cold Coffee (₹139)', '1x Double Chocolate Brownie (₹99)'],
+    regularPrice: 238,
+    comboPrice: 179,
+    savings: 59,
+    image: INDIAN_COLD_COFFEE_IMAGE,
+    popular: true,
+    categoryTag: 'Sweet Pair'
+  },
+  {
+    id: 'combo-best-friends',
+    name: 'Best Friends Combo',
+    tagline: 'Perfect for Café Hangouts',
+    description: 'Two Regular Coffees (Latte or Cappuccino) and two Choco-Chip Cookies to share.',
+    itemsIncluded: ['2x Regular Coffees (2 × ₹139 = ₹278)', '2x Choco-Chip Cookies (2 × ₹69 = ₹138)'],
+    regularPrice: 416,
+    comboPrice: 299,
+    savings: 117,
+    image: BAKERY_TRAY_IMAGE,
+    popular: true,
+    categoryTag: 'For Two'
+  },
+  {
+    id: 'combo-latte-croissant',
+    name: 'Latte & Croissant Combo',
+    tagline: 'French Bakery Morning Vibe',
+    description: 'One silky Café Latte served with a warm, flaky French Butter Croissant.',
+    itemsIncluded: ['1x Café Latte (₹149)', '1x Fresh Butter Croissant (₹119)'],
+    regularPrice: 268,
+    comboPrice: 199,
+    savings: 69,
+    image: FLAT_WHITE_IMAGE,
+    categoryTag: 'Quick Bite'
+  },
+  {
+    id: 'combo-mocha-treat',
+    name: 'Mocha Treat Combo',
+    tagline: 'Double Chocolate Satisfaction',
+    description: 'One rich Belgian Café Mocha paired with a warm gooey Chocolate Fudge Brownie.',
+    itemsIncluded: ['1x Café Mocha (₹169)', '1x Double Chocolate Brownie (₹99)'],
+    regularPrice: 268,
+    comboPrice: 219,
+    savings: 49,
+    image: MOCHA_IMAGE,
+    categoryTag: 'Sweet Pair'
+  },
+  {
+    id: 'combo-evening-snack',
+    name: 'Evening Snack Combo',
+    tagline: 'Savory & Energizing',
+    description: 'One Café Latte or Cappuccino with our toasted Grilled Paneer & Veg Cheese Sandwich.',
+    itemsIncluded: ['1x Café Latte (₹149)', '1x Grilled Paneer & Veg Cheese Sandwich (₹139)'],
+    regularPrice: 288,
+    comboPrice: 199,
+    savings: 89,
+    image: SANDWICH_IMAGE,
+    popular: true,
+    categoryTag: 'Quick Bite'
+  },
+  {
+    id: 'combo-coffee-for-two',
+    name: 'Coffee for Two',
+    tagline: 'Date or Catch-Up Special',
+    description: 'Two regular coffees of your choice with two freshly baked artisanal cookies.',
+    itemsIncluded: ['2x Regular Handcrafted Coffees (₹278)', '2x Selected Cookies (₹138)'],
+    regularPrice: 416,
+    comboPrice: 249,
+    savings: 167,
+    image: HERO_IMAGE,
+    categoryTag: 'For Two'
+  },
+  {
+    id: 'combo-frappe-lovers',
+    name: 'Frappé Lovers Combo',
+    tagline: 'Chilled Blended Extravaganza',
+    description: 'Two regular blended frappés (Java Chip or Caramel) topped with whipped cream.',
+    itemsIncluded: ['2x Regular Frappés (2 × ₹189 = ₹378)'],
+    regularPrice: 378,
+    comboPrice: 299,
+    savings: 79,
+    image: JAVA_CHIP_FRAPPE_IMAGE,
+    popular: true,
+    categoryTag: 'For Two'
+  },
+  {
+    id: 'combo-filter-coffee',
+    name: 'Filter Coffee Combo',
+    tagline: 'Traditional South Indian Comfort',
+    description: 'One hot South Indian Filter Coffee in brass dabarah served with a crunchy choco-chip cookie.',
+    itemsIncluded: ['1x South Indian Filter Coffee (₹89)', '1x Choco-Chip Cookie (₹69)'],
+    regularPrice: 158,
+    comboPrice: 129,
+    savings: 29,
+    image: FILTER_COFFEE_IMAGE,
+    categoryTag: 'Indian Classic'
+  },
+  {
+    id: 'combo-signature-treat',
+    name: 'Signature Treat Combo',
+    tagline: 'Premium Café Experience',
+    description: 'One Brew & Co. Signature Blend Coffee with a fresh warm Butter Croissant.',
+    itemsIncluded: ['1x Brew & Co. Signature Coffee (₹199)', '1x Fresh Butter Croissant (₹119)'],
+    regularPrice: 318,
+    comboPrice: 279,
+    savings: 39,
+    image: CARAMEL_FRAPPE_IMAGE,
+    categoryTag: 'Sweet Pair'
+  }
+];
+
+export const VALID_COUPONS: CouponRule[] = [
+  {
+    code: 'WELCOME10',
+    discountType: 'percentage',
+    value: 10,
+    minOrderValue: 200,
+    maxDiscount: 50,
+    description: '10% off on your first order above ₹200 (max ₹50)'
+  },
+  {
+    code: 'COFFEE20',
+    discountType: 'flat',
+    value: 20,
+    minOrderValue: 149,
+    description: 'Flat ₹20 off on eligible coffee combos above ₹149'
+  },
+  {
+    code: 'BREWDUO',
+    discountType: 'flat',
+    value: 40,
+    minOrderValue: 240,
+    description: 'Flat ₹40 off on 2-person combos above ₹240'
+  }
+];
+
+export const CAFE_INFO = {
+  name: 'Brew & Co.',
+  tagline: 'Modern, Aesthetic & Affordable Coffee in India',
+  address: '12th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038',
+  landmark: 'Near Indiranagar Metro Station (Exit B)',
+  phone: '+91 98450 22340',
+  email: 'hello@brewandco.in',
+  hours: 'Open Daily: 7:30 AM – 11:30 PM',
+  upiAccepted: ['PhonePe', 'Google Pay', 'Paytm', 'BHIM UPI']
+};
